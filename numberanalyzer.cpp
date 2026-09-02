@@ -15,6 +15,12 @@ void array(int size){
     for (int i=0;i<size;i++){
         cin >> p[i];
     }
+    if(cin.fail()){
+        cout << "Invalid input" << endl;
+        cin.clear();
+        cin.ignore(1000, '\n');
+    }
+    else{
     cout << "Array you created: " << endl;
     for(int i=0;i<size;i++){
         cout << p[i] << " , ";
@@ -45,6 +51,7 @@ void array(int size){
     cout << endl;
     delete[] p;
     p = nullptr;
+    }
 }
 
     
@@ -60,9 +67,21 @@ int main(){
     while(end == "y"){
     cout << "How many number do you want to analyze: ";
     cin >> size;
+    if(cin.fail()){
+        cout << "Invalid input" << endl;
+        cin.clear();
+        cin.ignore(1000, '\n');
+    }
+    else{
+    if(size <= 0){
+        cout << "Invalid array size" << endl;
+    }
+    else{
     array(size);
     cout << "Type y to continue or q to quit: ";
     cin >> end;
     cout << endl;
+    }
+    }
     }
 }
