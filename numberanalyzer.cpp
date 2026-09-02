@@ -19,6 +19,8 @@ void array(int size){
         cout << "Invalid input" << endl;
         cin.clear();
         cin.ignore(1000, '\n');
+        delete[] p;
+        p = nullptr;
     }
     else{
     cout << "Array you created: " << endl;
