@@ -36,7 +36,7 @@ void array(int size){
     }
     cout << "Smallest number: " << smallest << endl;
 
-    double sum;
+    double sum = 0;
     for(int i=0;i<size;i++){
         sum += p[i];
     }
