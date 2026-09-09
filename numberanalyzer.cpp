@@ -1,12 +1,11 @@
 #include<iostream>
 using namespace std;
 
-void welcome(string name){
+void welcome(){
     cout << "|===============|" << endl;
     cout << "|NUMBER ANALYZER|" << endl;
     cout << "|===============|" << endl;
     cout << endl;
-    cout << "Welcome " << name << endl;
 }
 
 void array(int size){
@@ -23,67 +22,61 @@ void array(int size){
         p = nullptr;
     }
     else{
-    cout << "Array you created: " << endl;
-    for(int i=0;i<size;i++){
-        cout << p[i] << " , ";
-    }
-    cout << endl;
-    double largest = p[0];
-    for(int i=0;i<size;i++){
-        if(p[i] > largest){
-        largest = p[i];
+        cout << "Array you created: " << endl;
+        for(int i=0;i<size;i++){
+            cout << p[i] << " , ";
         }
-    }
-    cout << "Largest number: " << largest << endl;
-
-    double smallest = p[0];
-    for(int i=0;i<size;i++){
-        if(p[i] < smallest){
-            smallest = p[i];
+        cout << endl;
+        double largest = p[0];
+        for(int i=0;i<size;i++){
+            if(p[i] > largest){
+                largest = p[i];
+            }
         }
-    }
-    cout << "Smallest number: " << smallest << endl;
+        cout << "Largest number: " << largest << endl;
 
-    double sum = 0;
-    for(int i=0;i<size;i++){
-        sum += p[i];
-    }
-    cout << "Sum: " << sum << endl;
-    cout << "Average: " << sum/size;
-    cout << endl;
-    delete[] p;
-    p = nullptr;
+        double smallest = p[0];
+        for(int i=0;i<size;i++){
+            if(p[i] < smallest){
+                smallest = p[i];
+            }
+        }
+        cout << "Smallest number: " << smallest << endl;
+
+        double sum = 0;
+        for(int i=0;i<size;i++){
+            sum += p[i];
+        }
+        cout << "Sum: " << sum << endl;
+        cout << "Average: " << sum/size;
+        cout << endl;
+        delete[] p;
+        p = nullptr;
     }
 }
 
     
 int main(){
-    string name;
     int size;
-    string end;
-    cout << "What is your name: ";
-    cin >> name;
     cout << endl;
-    welcome(name);
-    end = "y";
-    while(end == "y"){
-    cout << "How many number do you want to analyze: ";
-    cin >> size;
-    if(cin.fail()){
-        cout << "Invalid input" << endl;
-        cin.clear();
-        cin.ignore(1000, '\n');
-    }
-    else{
-    if(size <= 0){
-        cout << "Invalid array size" << endl;
-    }
-    else{
-    array(size);
-    cout << "Type y to continue or q to quit: ";
-    cin >> end;
-    cout << endl;
-    }
-    }
+    welcome();
+    while(true){
+        cout << "How many number do you want to analyze: ";
+        cin >> size;
+        if(cin.fail()){
+            cout << "Invalid input" << endl;
+            cin.clear();
+            cin.ignore(1000, '\n');
+        }
+        else{
+            if(size <= 0){
+                cout << "Invalid array size" << endl;
+            }
+            else{
+                array(size);
+                cout << endl;
+            }
+        }
     }
 }
+
