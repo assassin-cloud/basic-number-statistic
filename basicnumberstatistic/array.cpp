@@ -18,6 +18,7 @@ void array(){
             double *p = new double[size];
             cout << "Enter " << size << " numbers: " << endl;
             for (int i=0;i<size;i++){
+                cout << "Enter " << i+1 << " number" << endl;
                 cin >> p[i];
             }
 
